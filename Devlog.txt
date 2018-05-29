@@ -1,0 +1,22 @@
+BaysideBonanza -- Jason Kim and Derek Song
+APCS2 pd8
+FINAL PROJECT
+
+===============================================================================================
+DEVLOG
+===============================================================================================
+5-25-18
+- We started thinking about possible ideas for the project. 
+- We thought of ideas such as a short RPG that has a story and typical turn-based battle style. 
+- We also thought of having a battle simulator of a game such as Pokemon.
+===============================================================================================
+5-26-18
+- We thought of even more ideas!
+- One of the ideas that stood out the most was Galaga.
+===============================================================================================
+5-27-18
+- We started making bits a pieces of our proposal.
+- We are still a bit conflicted between battle simulator and the RPG
+===============================================================================================
+5-28-18
+===============================================================================================
