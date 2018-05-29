@@ -19,4 +19,6 @@ DEVLOG
 - We are still a bit conflicted between battle simulator and the RPG
 ===============================================================================================
 5-28-18
+- We decided to go with the RPG Adventure.
+- We made a basic idea and plot. 
 ===============================================================================================
