@@ -1,0 +1,23 @@
+BaysideBalloons - Jason Kim and Derek Song
+2018-05-31
+
+Which jobs are most crucial?
+  Ultimately, the game is an RPG, so the most crucial part would have to be the battle system. 
+  Without a battle system ,adventure is pointless! 
+  The story is a very minor part of this project and should be held off until the very end. 
+  To make sure this process goes smoothly, developing UML Diagrams are key so we are organized from the start. 
+  
+Which components constitute core functionality (vs non-essential)?
+  As mentioned before, the battle system acts as the core of our project.
+  However, the world setting and map is also very important as it will give us an "area" to find battles.
+  The battle should still act as the core however, as we can make the map into something very basic to the point where it's not much of a feature at all.
+  
+Which components are prerequisites for others?
+  For the map, we must make the tile classes first. 
+  Also, for the visuals, we must make/download different PNGs so we have the eye-appeal.
+  The battle system must also be set in stone before we create enemies.
+  
+Which tasks can be delegated, and which must be collaboratively tackled?
+  The making of the battle system MUST be done collaboratively. 
+  The tile making can be delegated to one person as it is simply eye-candy and not much else.
+  The making of the enemies, tile fuctionality, and player functionality can technically be delegated to one person, but the result will be better with a collaborative effort.
