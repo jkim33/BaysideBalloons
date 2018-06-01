@@ -1,6 +1,6 @@
 BaysideBalloons -- Jason Kim and Derek Song
 APCS2 pd8
-FINAL PROJECT
+FINAL PROJECT -- Devlog
 
 ===============================================================================================
 DEVLOG
@@ -22,3 +22,13 @@ DEVLOG
 - We decided to go with the RPG Adventure.
 - We made a basic idea and plot. 
 ===============================================================================================
+5-29-18
+- We started to test different things with pictures on processing.
+- We have come up with a sufficient grid system that gives each tile its own properties and visual.
+- We now have the skeleton for the areas.
+===============================================================================================
+5-30-18
+- We thought about ways we could implement APCS2 topics.
+- We thought about the idea of using a stack to effectively recycle enemies. 
+- Basically, we want to have certain concentrations of certain enemies for balance.
+- So popping and repushing onto a stack maybe a handy solution.
