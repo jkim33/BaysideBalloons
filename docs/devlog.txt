@@ -32,3 +32,11 @@ DEVLOG
 - We thought about the idea of using a stack to effectively recycle enemies. 
 - Basically, we want to have certain concentrations of certain enemies for balance.
 - So popping and repushing onto a stack maybe a handy solution.
+===============================================================================================
+5-31-18
+- We continued testing out graphic implementation with tiles
+- We thought about how we can implement term 2 ideas
+- Started updating proposal
+- Made UML diagram and flowchart
+===============================================================================================
+6-01-18
