@@ -40,3 +40,15 @@ DEVLOG
 - Made UML diagram and flowchart
 ===============================================================================================
 6-01-18
+- We came up with an idea that would implement a term 2 concept.
+- We are going to use RandomQueue to control the enemy concentration.
+- We updated the proposal as well.
+===============================================================================================
+6-02-18
+- We started implementing more to our test files.
+- We started working on the wall tiles such that they would actually work as walls.
+- We also made a basic move method.
+===============================================================================================
+6-03-18
+- We finished the walls and they work!
+- We also thought about the project more and we came up with the idea of using constructors to update maps.
