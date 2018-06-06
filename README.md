@@ -9,4 +9,8 @@
   The RPG works by utilizing a number of classes. The basic player class contains all the stats as instance variables and this class has the methods that allows it to attack the enemies. Test (name is going to change), which has setup() and draw(), also has a keyPressed() which allows the user to move their character around the screen. Battles are encountered through a random number generator and you can only attack through the letter L (which is also subject to change).
   
 ## Launch Instructions
-  Go to Terminal, go into correct directory, open in Processing, and press Play
+  1) Clone this repository.
+  2) Change your directory until you are in the Test directory.
+  3) Open Test.pde with processing.
+    a) In terminal, type: processing Test.pde
+  4) In processing, hit the play button!
