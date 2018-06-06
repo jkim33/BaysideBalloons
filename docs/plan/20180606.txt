@@ -6,28 +6,28 @@ HW#57 -- Changes In Latitude, Changes In Attitude
 Plan: 2018-06-04
 
 GENERAL ORDER:
-- Finish a Test Enemy class.
-- Implement a Test Battle system.
-- Make portal tiles and multiple maps.
-- Try the Test Files.
+- Implement a Test Battle system. 
+- Add visuals for the battle. 
 - Find PNGs/Tiles.
 - Use the Test files as a backbone in the creation of the actual game.
 - Expand, expand, expand. 
 
 Which jobs are most crucial?
-- Currently, we have a good portion of the test files done.
-- The wall and floor tiles have been implemented, and the player can move.
-- We now must try and finish this test by implementing portal tiles, tha battle system and multiple maps.
-- Once this test is finish, we will have a clear guidline of how to run the full game.
+- Now it is important that we put the finishing touches of the battle system.
+- We also need to implement the use of text on the screen so that we can have a nice user interface. 
+- We must also implement the use of delay.
 
 Which components constitute core functionality (vs non-essential)?
-- Portal tiles are an absolute necessaity as multiple maps will be needed for the purposes of our project.
-- Of course, the battle system is important as it's the main game aspect of the game.
+- The battle system needs to be finished so we have a game.
+- With that, we need to find a way to organize the text and have appropriate stops and pauses.
+- This will allow the user to understand what is happening.
 
 Which components are prerequisites for others?
-- Portal tiles and enemy classes are needed ASAP.
+- Enemy class is essential to finish the battle system.
+- We also need to finish some mathematics to see how the battle system will work and be implemented.
+- Once we figure out a balanced system, we can actually implement the battle system.
 
 Which tasks can be delegated, and which must be collaboratively tackled?
-- One person can make the enemy classes while the other makes or finds the tiles/PNGs we need.
-- From there, we can collaborate on using the enemy classes to design the battle system well.
-- We can also use the PNGs to collaboratively design different maps.
+- The mathematics of the battle system needs be done collaboratively. 
+- Once we both have a grasp of the system, we can individually make multiple enemies.
+- One of us can also get tiles and PNGs and do the general design.
