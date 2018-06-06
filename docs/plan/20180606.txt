@@ -1,9 +1,9 @@
 BaysideBalloons -- Jason Kim & Derek Song
 APCS2 pd8
-HW#57 -- Changes In Latitude, Changes In Attitude
-2018-06-04
+HW#58 -- Keep the Pointy End Pointing Upward
+2018-06-06
 
-Plan: 2018-06-04
+Plan: 2018-06-06
 
 GENERAL ORDER:
 - Implement a Test Battle system. 
