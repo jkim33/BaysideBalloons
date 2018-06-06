@@ -52,3 +52,13 @@ DEVLOG
 6-03-18
 - We finished the walls and they work!
 - We also thought about the project more and we came up with the idea of using constructors to update maps.
+===============================================================================================
+6-04-18
+- We implemented a random encounter system.
+- We also made a basic enemy class.
+- The battle system, while bad, has been made at least.
+===============================================================================================
+6-05-18
+- Mainly thinking and reseaching. 
+- Learned about text() and delay().
+- We also updated the UML and Flowchart.
