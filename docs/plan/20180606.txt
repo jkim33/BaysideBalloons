@@ -1,0 +1,33 @@
+BaysideBalloons -- Jason Kim & Derek Song
+APCS2 pd8
+HW#57 -- Changes In Latitude, Changes In Attitude
+2018-06-04
+
+Plan: 2018-06-04
+
+GENERAL ORDER:
+- Finish a Test Enemy class.
+- Implement a Test Battle system.
+- Make portal tiles and multiple maps.
+- Try the Test Files.
+- Find PNGs/Tiles.
+- Use the Test files as a backbone in the creation of the actual game.
+- Expand, expand, expand. 
+
+Which jobs are most crucial?
+- Currently, we have a good portion of the test files done.
+- The wall and floor tiles have been implemented, and the player can move.
+- We now must try and finish this test by implementing portal tiles, tha battle system and multiple maps.
+- Once this test is finish, we will have a clear guidline of how to run the full game.
+
+Which components constitute core functionality (vs non-essential)?
+- Portal tiles are an absolute necessaity as multiple maps will be needed for the purposes of our project.
+- Of course, the battle system is important as it's the main game aspect of the game.
+
+Which components are prerequisites for others?
+- Portal tiles and enemy classes are needed ASAP.
+
+Which tasks can be delegated, and which must be collaboratively tackled?
+- One person can make the enemy classes while the other makes or finds the tiles/PNGs we need.
+- From there, we can collaborate on using the enemy classes to design the battle system well.
+- We can also use the PNGs to collaboratively design different maps.
