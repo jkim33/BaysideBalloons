@@ -9,7 +9,7 @@
   The RPG works by utilizing a number of classes. The basic player class contains all the stats as instance variables and this class has the methods that allows it to attack the enemies. Test (name is going to change), which has setup() and draw(), also has a keyPressed() which allows the user to move their character around the screen. Battles are encountered through a random number generator and you can only attack through the letter L (which is also subject to change).
   
 ## Launch Instructions
-  Go to Terminal\n
-  Go into correct directory\n
-  Open in Processing\n
+  Go to Terminal
+  Go into correct directory
+  Open in Processing
   Press Play
