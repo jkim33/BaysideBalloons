@@ -24,8 +24,8 @@ class Player {
     MDef = 30;
     Mana = 10;
     Speed = 45;
-    x = 250;
-    y = 250;
+    x = 125;
+    y = 125;
   }
 
   int attack() {
@@ -39,13 +39,13 @@ class Player {
   }
 
   void move(char c, Map m, Enemy e) {
-    if (c == 'w' && m.tiles[(y-5)/100][(x)/100].getType() != 1) {
+    if (c == 'w' && m.tiles[(y-5)/50][(x)/50].getType() != 1) {
       y = y - 5;
-    } else if (c == 'a' && m.tiles[y/100][(x-5)/100].getType() != 1) {
+    } else if (c == 'a' && m.tiles[y/50][(x-5)/50].getType() != 1) {
       x = x - 5;
-    } else if (c == 's' && m.tiles[(y+5)/100][x/100].getType() != 1) {
+    } else if (c == 's' && m.tiles[(y+5)/50][x/50].getType() != 1) {
       y = y + 5;
-    } else if (c == 'd' && m.tiles[y/100][(x+5)/100].getType() != 1) {
+    } else if (c == 'd' && m.tiles[y/50][(x+5)/50].getType() != 1) {
       x = x + 5;
     }
     if (Math.random() <= 0.02) {

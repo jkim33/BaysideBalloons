@@ -3,7 +3,7 @@ Player player;
 Enemy enemy;
 
 void setup() {
-  size(500, 500);
+  size(250, 250);
   map = new Map(0);
   player = new Player();
   enemy = new Enemy();
@@ -14,12 +14,12 @@ void draw() {
     background(255, 0, 0);
   }
   if (!player.Fighting) {
-    if (map.tiles[player.y/100][player.x/100].getType() == 2) {
+    if (map.tiles[player.y/50][player.x/50].getType() == 2) {
       int oldX = player.x;
       int oldY = player.y;
-      player.x = map.tiles[oldY/100][oldX/100].nextX;
-      player.y = map.tiles[oldY/100][oldX/100].nextY;
-      map = new Map(map.tiles[oldY/100][oldX/100].getNext());
+      player.x = map.tiles[oldY/50][oldX/50].nextX;
+      player.y = map.tiles[oldY/50][oldX/50].nextY;
+      map = new Map(map.tiles[oldY/50][oldX/50].getNext());
     }
     map.display();
     ellipse(player.x, player.y, 20, 20);
