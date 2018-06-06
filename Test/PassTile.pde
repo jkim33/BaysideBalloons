@@ -1,6 +1,6 @@
 class PassTile extends Tile {
   PassTile() {
-    passable = true;
+    type = 0;
     photo = loadImage("Square.png");
   }
 }

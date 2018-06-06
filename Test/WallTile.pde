@@ -1,6 +1,6 @@
 class WallTile extends Tile {
   WallTile() {
-    passable = false;
+    type = 1;
     photo = loadImage("Nasa.png");
   }
 }

@@ -1,12 +1,22 @@
 class Tile {
-  boolean passable;
+  int type;
   PImage photo;
+  
+  int nextX;
+  int nextY;
+  
+  int nextMap;
   
   PImage getPhoto() {
     return photo;
   }
   
-  boolean getPass() {
-    return passable;
+  int getType() {
+    return type;
   }
+  
+  int getNext() {
+    return nextMap;
+  }
+  
 }
