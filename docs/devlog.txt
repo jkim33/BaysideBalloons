@@ -62,3 +62,15 @@ DEVLOG
 - Mainly thinking and reseaching. 
 - Learned about text() and delay().
 - We also updated the UML and Flowchart.
+===============================================================================================
+6-06-18
+- Input the newly found knowledge of text() and delay() into our program
+- Focused on solidifying what we have right now and then, expanded from there.
+===============================================================================================
+6-07-18
+- Worked on finishing what we wanted to for the project.
+- Created more enemy classes and made the map bigger.
+- Incorporated term2 concepts
+===============================================================================================
+6-08-18
+- Furnish and finish
