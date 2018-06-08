@@ -5,6 +5,35 @@ FINAL PROJECT -- Devlog
 ===============================================================================================
 DEVLOG
 ===============================================================================================
+Obstacles Overcome (and how!)
+
+	We definitely had problems putting our ideas into code but through perseverence and making
+necessary cuts to ideas that were going to be difficult to implement, we were able to produce our 
+final project to this level.
+
+Unresolved Issues
+	
+	We were originally going to do magic attacks. However, we are not implementing this because
+we could not find a use for it.
+
+
+Cool Stuff Learned (conceptual and/or practical)
+
+	Communication is very important as usual. We learned how to put text into Processing and
+we also used this text to show the user the amount of damage they take and give. 
+
+Mid-development Design Changes (and why!)
+
+	As stated before, we did not implement magic attacks as planned due to our inablility to 
+fit it into our RPG. Another change is that instead of doing four floors, we did three. This was to
+lighten our load a little bit.
+
+Lessons Learned (...which you might apply to future projects, CS or otherwise)
+
+	Do everything in a timely fashion. Try to do everything together so that everything is 
+equally understood between the two or three of you.
+
+===============================================================================================
 5-25-18 
 - We started thinking about possible ideas for the project. 
 - We thought of ideas such as a short RPG that has a story and typical turn-based battle style. 
