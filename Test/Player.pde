@@ -59,7 +59,7 @@ class Player {
       return true;
       //x = x+50;
     }
-    if (Math.random() <= 0.1) {
+    if (Math.random() == 0.1) {
       Fighting = true;
       if (Speed > e.Speed) {
         YourTurn = true;

@@ -16,7 +16,7 @@ int endCounter;
 
 void setup() {
   size(550, 500);
-  mapNum = 0;
+  mapNum = 21;
   map = new Map(mapNum);
   player = new Player();
   hallway = new RQueue<Enemy>();
@@ -232,7 +232,7 @@ void playerPic() {
 
 void getTextOne() {
   textSize(28);
-  text("HP: " + player.HP, 5, 490);
+  text("HP: " + player.HP + "           Floor: " + mapNum/10, 5, 490);
 }
 
 void getTextTwo() {
@@ -251,7 +251,10 @@ void pause() {
 }
 
 void setCon() {
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 5; i++) {
     hallway.enqueue(new Freshman());
+  }
+  for (int i = 0; i < 5; i++) {
+    //hallway.enqueue(new Teacher());
   }
 }
