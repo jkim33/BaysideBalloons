@@ -9,6 +9,7 @@ class Enemy {
   float Speed;
 
   Enemy() {
+    photo = loadImage("player2.png");
     HP = 100;
     Atk = 20.;
     Def = 25.;

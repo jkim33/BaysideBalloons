@@ -1,7 +1,12 @@
-Enemy[] hallway;
+RQueue<Enemy> hallway;
+RQueue<Enemy> classroom;
+RQueue<Enemy> library;
+RQueue<Enemy> cafateria;
+RQueue<Enemy> firstFloor;
+
 Map map;
 Player player;
-Enemy[] concentration;
+RQueue<Enemy> concentration;
 Enemy enemy;
 int mapNum;
 int aniState;
@@ -14,9 +19,11 @@ void setup() {
   mapNum = 0;
   map = new Map(mapNum);
   player = new Player();
-  hallway = new Enemy[] {new Freshman(), new Freshman(), new Freshman(), new Freshman(), new Freshman(), new Freshman(), new Freshman(), new Freshman(), new Freshman(), new Freshman()};
+  hallway = new RQueue<Enemy>();
+  concentration = new RQueue<Enemy>();
+  setCon();
   concentration = hallway;
-  enemy = concentration[0];
+  enemy = concentration.dequeue();
   aniState = 0;
   battleString = "";
   battleCounter = 0;
@@ -58,6 +65,17 @@ void draw() {
       }
     }
   } else if (!player.Fighting) {
+    setCon();
+    if (enemy.HP <= 0) {
+      try {
+        enemy = concentration.dequeue();
+      }
+      catch (Exception e) {
+        println("hi");
+        concentration = hallway;
+        enemy = concentration.dequeue();
+      }
+    }
     battleString = "";
     battleCounter = 0;
     endCounter = 0;
@@ -157,56 +175,56 @@ void playerPic() {
     player.y = player.y - 25;
     while (millis() - m1 < 150) {
     }
-    image(player.PlayerPhoto, player.x, player.y);
+    image(loadImage("row4_1.png"), player.x, player.y);
     aniState = 2;
   } else if (aniState == 2) {
     int m1 = millis();
     player.y = player.y - 25;
     while (millis() - m1 < 150) {
     }
-    image(player.PlayerPhoto, player.x, player.y);
+    image(loadImage("row4_3.png"), player.x, player.y);
     aniState = 0;
   } else if (aniState == 3) {
     int m1 = millis();
     player.x = player.x - 25;
     while (millis() - m1 < 150) {
     }
-    image(player.PlayerPhoto, player.x, player.y);
+    image(loadImage("row2_1.png"), player.x, player.y);
     aniState = 4;
   } else if (aniState == 4) {
     int m1 = millis();
     player.x = player.x - 25;
     while (millis() - m1 < 150) {
     }
-    image(player.PlayerPhoto, player.x, player.y);
+    image(loadImage("row2_3.png"), player.x, player.y);
     aniState = 0;
   } else if (aniState == 5) {
     int m1 = millis();
     player.y = player.y + 25;
     while (millis() - m1 < 150) {
     }
-    image(player.PlayerPhoto, player.x, player.y);
+    image(loadImage("row1_1.png"), player.x, player.y);
     aniState = 6;
   } else if (aniState == 6) {
     int m1 = millis();
     player.y = player.y + 25;
     while (millis() - m1 < 150) {
     }
-    image(player.PlayerPhoto, player.x, player.y);
+    image(loadImage("row1_3.png"), player.x, player.y);
     aniState = 0;
   } else if (aniState == 7) {
     int m1 = millis();
     player.x = player.x + 25;
     while (millis() - m1 < 150) {
     }
-    image(player.PlayerPhoto, player.x, player.y);
+    image(loadImage("row3_1.png"), player.x, player.y);
     aniState = 8;
   } else if (aniState == 8) {
     int m1 = millis();
     player.x = player.x + 25;
     while (millis() - m1 < 150) {
     }
-    image(player.PlayerPhoto, player.x, player.y);
+    image(loadImage("row3_3.png"), player.x, player.y);
     aniState = 0;
   } else {
     image(player.PlayerPhoto, player.x, player.y);
@@ -230,5 +248,11 @@ void getTextTwo() {
 void pause() {
   int m1 = millis();
   while (millis() - m1 < 2000) {
+  }
+}
+
+void setCon() {
+  for (int i = 0; i < 10; i++) {
+    hallway.enqueue(new Freshman());
   }
 }
