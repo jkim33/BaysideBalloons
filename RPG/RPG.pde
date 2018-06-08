@@ -1,8 +1,8 @@
 RQueue<Enemy> hallway;
 RQueue<Enemy> classroom;
 RQueue<Enemy> library;
-RQueue<Enemy> cafateria;
-RQueue<Enemy> firstFloor;
+RQueue<Enemy> cafeteria;
+RQueue<Enemy> pool;
 
 Map map;
 Player player;
@@ -16,13 +16,19 @@ int endCounter;
 
 void setup() {
   size(550, 500);
-  mapNum = 21;
+  mapNum = 11;
   map = new Map(mapNum);
   player = new Player();
+
   hallway = new RQueue<Enemy>();
+  classroom = new RQueue<Enemy>();
+  library = new RQueue<Enemy>();
+  cafeteria = new RQueue<Enemy>();
+  pool = new RQueue<Enemy>();
+
   concentration = new RQueue<Enemy>();
   setCon();
-  concentration = hallway;
+  updateCon();
   enemy = concentration.dequeue();
   aniState = 0;
   battleString = "";
@@ -31,8 +37,19 @@ void setup() {
 }
 
 void draw() {
+  if (player.Finished == 4) {
+    background(0,0,255);
+    textSize(28);
+    text("Congratulations!",170,150);
+    text("You have conquered Stuy!", 100, 180);
+    return;
+  }
   if (player.Lost) {
     background(255, 0, 0);
+    textSize(28);
+    text("GAME OVER.", 185, 150);
+    text("STUY HAS DEFEATED YOU.",100,180); 
+    return;
   } else if (player.End) {
     if (player.HP > 0) {
       if (endCounter < 120) {
@@ -71,11 +88,18 @@ void draw() {
         enemy = concentration.dequeue();
       }
       catch (Exception e) {
-        println("hi");
         concentration = hallway;
         enemy = concentration.dequeue();
       }
     }
+    /*
+    println(hallway);
+    println(classroom);
+    println(library);
+    println(cafeteria);
+    println(pool);
+    println(concentration);
+    */
     battleString = "";
     battleCounter = 0;
     endCounter = 0;
@@ -115,7 +139,7 @@ void draw() {
 }
 
 void keyPressed() {
-  if (!player.Fighting) {
+  if (!player.Fighting && !player.End) {
     if (key == CODED) {
       if (keyCode == UP || keyCode == DOWN || keyCode == LEFT || keyCode == RIGHT) {
         char c = 'q';
@@ -149,7 +173,7 @@ void keyPressed() {
     }
   } else {
     if (player.YourTurn) {
-      if (key == '1') {
+      if (key == '1' || key == '2' || key == '3') {
         battleString = player.attack(key, enemy);
         battleCounter = 0;
       }
@@ -165,6 +189,7 @@ void check() {
     player.y = map.tiles[oldY/50 + 1][oldX/50 + 1].nextY;
     mapNum = map.tiles[oldY/50 + 1][oldX/50 + 1].getNext();
     map = new Map(mapNum);
+    updateCon();
   }
 }
 
@@ -232,7 +257,7 @@ void playerPic() {
 
 void getTextOne() {
   textSize(28);
-  text("HP: " + player.HP + "           Floor: " + mapNum/10, 5, 490);
+  text("HP: " + player.HP + "            Floor: " + mapNum/10 + "            Year: " + player.Year, 5, 490);
 }
 
 void getTextTwo() {
@@ -251,10 +276,71 @@ void pause() {
 }
 
 void setCon() {
+  hallway = new RQueue<Enemy>();
+  cafeteria = new RQueue<Enemy>();
+  classroom = new RQueue<Enemy>();
+  pool = new RQueue<Enemy>();
+  library = new RQueue<Enemy>();
   for (int i = 0; i < 5; i++) {
     hallway.enqueue(new Freshman());
+    cafeteria.enqueue(new Freshman());
+    classroom.enqueue(new Freshman());
+    pool.enqueue(new Freshman());
+    library.enqueue(new Freshman());
   }
-  for (int i = 0; i < 5; i++) {
-    //hallway.enqueue(new Teacher());
+  for (int k = 0; k < 3; k++) {
+    hallway.enqueue(new Teacher());
+    cafeteria.enqueue(new Chef());
+    classroom.enqueue(new Test());
+    pool.enqueue(new Dean());
+    library.enqueue(new Notebook());
   }
+  for (int l = 0; l < 2; l++) {
+    hallway.enqueue(new Security());
+    cafeteria.enqueue(new Security());
+    classroom.enqueue(new Teacher());
+    pool.enqueue(new Security());
+    library.enqueue(new Security());
+  }
+
+  if (player.Year == 1) {
+    library = new RQueue<Enemy>();
+    library.enqueue(new Librarian());
+  }
+  if (player.Year == 2) {
+    pool = new RQueue<Enemy>();
+    pool.enqueue(new Coach());
+  }
+  if (player.Year == 3) {
+    cafeteria = new RQueue<Enemy>();
+    cafeteria.enqueue(new SAT());
+  }
+  if (player.Year == 4) {
+    classroom = new RQueue<Enemy>();
+    classroom.enqueue(new FinalBoss());
+  }
+}
+
+void updateCon() {
+  if (mapNum == 11 || mapNum == 21 || mapNum == 31) {
+    concentration = new RQueue<Enemy>();
+    concentration = hallway;
+  }
+  if (mapNum == 12 || mapNum == 13) {
+    concentration = new RQueue<Enemy>();
+    concentration = pool;
+  }
+  if (mapNum == 22) {
+    concentration = new RQueue<Enemy>();
+    concentration = cafeteria;
+  }
+  if (mapNum == 33) {
+    concentration = new RQueue<Enemy>();
+    concentration = library;
+  }
+  if (mapNum == 23 || mapNum == 32) {
+    concentration = new RQueue<Enemy>();
+    concentration = classroom;
+  }
+  enemy = concentration.dequeue();
 }

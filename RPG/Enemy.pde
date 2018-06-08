@@ -3,20 +3,16 @@ class Enemy {
   int HP;
   float Atk;
   float Def;
-  float MAtk;
-  float MDef;
-  float Mana;
   float Speed;
+  boolean Boss;
 
   Enemy() {
     photo = loadImage("player2.png");
     HP = 100;
     Atk = 20.;
     Def = 25.;
-    MAtk = 20.;
-    MDef = 20.;
-    Mana = 10.;
     Speed = 40.;
+    Boss = false;
   }
   
   String attack(Player p) {
