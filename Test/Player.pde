@@ -3,6 +3,7 @@ class Player {
   PImage PlayerPhoto;
   boolean YourTurn;
   boolean Fighting;
+  boolean End;
   boolean Lost;
   boolean Finished;
 
@@ -19,7 +20,7 @@ class Player {
 
   Player() {
     PlayerPhoto = loadImage("player3.png");
-    HP = 400;
+    HP = 1000;
     Atk = 30.;
     Def = 30.;
     MAtk = 30.;
@@ -76,6 +77,11 @@ class Player {
       atk = (int) ((Atk/ED + 1) * ((Math.random() * 10) +30));
       e.HP = e.HP - atk;
       YourTurn = false;
+      if (e.HP <= 0) {
+        e.HP = 100;
+        Fighting = false;
+        End = true;
+      }
       return "You did " + atk + " damage!";
     }
     return "nope";
