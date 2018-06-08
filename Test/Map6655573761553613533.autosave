@@ -1,0 +1,127 @@
+class Map {
+  Tile[][] tiles;
+
+  Map(int map) {
+    tiles = new Tile[11][13];
+    if (map == 0) {
+      mapZero();
+    }
+    if (map == 1) {
+      mapOne();
+    }
+    /*if (map == 2) {
+     mapTwo();
+     }*/
+  }
+
+  void display() {
+    for (int row = 1; row < 10; row++) {
+      for (int col = 1; col < 12; col++) {
+        image(tiles[row][col].getPhoto(), (col-1)*50, (row-1)*50);
+      }
+    }
+  }
+
+  void mapZero() {
+    for (int col = 0; col < 12; col++) { // creates border
+      tiles[0][col] = new WallTile();
+      tiles[10][col] = new WallTile();
+    }
+    for (int row = 0; row < 11; row++) { // creates border
+      tiles[row][0] = new WallTile();
+      tiles[row][10] = new WallTile();
+    }
+
+    for (int row = 1; row < 10; row++) { // creates side wall
+      for (int col = 1; col < 11; col++) {
+        if (row < 9) {
+          tiles[row][1] = new WallTile();
+        } else {
+          tiles[row][1] = new TopWall();
+        }
+      }
+    }
+
+    for (int row = 1; row < 9; row++) {
+      for (int col = 1; col < 12; col++) {
+        if (row == 1) { // creates top wall
+          tiles[row][col] = new TopWall();
+        } else if (row == 9) { // creates bot wall
+          tiles[row][col] = new TopWall();
+        } else { // creates floor
+          tiles[row][col] = new FloorTile();
+        }
+      }
+    }
+
+    tiles[1][11] = new WallTile();
+    tiles[2][11] = new WallTile();
+    tiles[3][11] = new WallTile();
+    tiles[4][11] = new WallTile();
+    tiles[5][11] = new TopWall();
+    tiles[6][11] = new PortalTile(1, 55, 150);
+    tiles[7][11] = new WallTile();
+    tiles[8][11] = new WallTile();
+    tiles[9][11] = new TopWall();
+  }
+
+  void mapOne() {
+
+    /*
+    for (int row1 = 1; row1 < 8; row1++) {
+     if (row1 < 7) {
+     tiles[row1][9] = new WallTile();
+     } else {
+     tiles[row1][9] = new TopWall();
+     }
+     }
+     for (int row2 = 1; row2 < 8; row2++) {
+     for (int col2 = 2; col2 < 9; col2++) {
+     if (row2 == 1) {
+     tiles[row2][col2] = new TopWall();
+     } else if (row2 == 7) {
+     tiles[row2][col2] = new TopWall();
+     } else {
+     tiles[row2][col2] = new FloorTile();
+     }
+     }
+     }
+     tiles[1][1] = new WallTile();
+     tiles[2][1] = new WallTile();
+     tiles[3][1] = new TopWall();
+     tiles[4][1] = new PortalTile(0, 380, 150);
+     tiles[5][1] = new WallTile();
+     tiles[6][1] = new WallTile();
+     tiles[7][1] = new TopWall();
+     */
+  }
+
+  /*void MapTwo() {
+   for (int c = 0; c < 11; c++) {
+   tiles[0][c] = new WallTile();
+   tiles[8][c] = new WallTile();
+   }
+   for (int r = 0; r < 9; r++) {
+   tiles[r][0] = new WallTile();
+   tiles[r][10] = new WallTile();
+   }
+   for (int row1 = 1; row1 < 8; row1++) {
+   if (row1 < 7) {
+   tiles[row1][1] = new WallTile();
+   } else {
+   tiles[row1][1] = new TopWall();
+   }
+   }
+   for (int row2 = 1; row2 < 8; row2++) {
+   for (int col2 = 2; col2 < 9; col2++) {
+   if (row2 == 1) {
+   tiles[row2][col2] = new TopWall();
+   } else if (row2 == 7) {
+   tiles[row2][col2] = new TopWall();
+   } else {
+   tiles[row2][col2] = new FloorTile();
+   }
+   }
+   }
+   } */
+}

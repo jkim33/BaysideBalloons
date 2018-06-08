@@ -15,7 +15,7 @@ int battleCounter;
 int endCounter;
 
 void setup() {
-  size(450, 400);
+  size(550, 500);
   mapNum = 0;
   map = new Map(mapNum);
   player = new Player();
@@ -40,10 +40,10 @@ void draw() {
         PImage photo = loadImage("battle.png");
         image(photo, 0, 0);
         PImage p = loadImage("player4.png");
-        image(p, 100, 150);
-        image(enemy.getPhoto(), 300, 150);
+        image(p, 150, 200);
+        image(enemy.getPhoto(), 350, 200);
         getTextTwo();
-        text("You Defeated the Enemy!", 250, 310, 200, 175);
+        text("You Defeated the Enemy!", 300, 400, 200, 175);
         endCounter++;
       } else {
         player.End = false;
@@ -55,9 +55,9 @@ void draw() {
         image(photo, 0, 0);
         PImage p = loadImage("player4.png");
         image(p, 100, 150);
-        image(enemy.getPhoto(), 300, 150);
+        image(enemy.getPhoto(), 350, 200);
         getTextTwo();
-        text("You have been Defeated!", 250, 310, 200, 175);
+        text("You have been Defeated!", 300, 400, 200, 175);
         endCounter++;
       } else {
         player.End = false;
@@ -88,16 +88,15 @@ void draw() {
     background(0, 0, 0);
     PImage photo = loadImage("battle.png");
     image(photo, 0, 0);
-    PImage p = loadImage("player4.png");
-    image(p, 100, 150);
-    image(enemy.getPhoto(), 300, 150);
+    image(loadImage("player4.png"), 150, 200);
+    image(enemy.getPhoto(), 350, 200);
     if (player.HP <= 0) {
       player.HP = 0;
     }
     getTextTwo();
     if (battleCounter < 120 && battleString != "") {
       battleCounter++;
-      text(battleString, 250, 310, 200, 175);
+      text(battleString, 300, 400, 200, 175);
     } else if (player.YourTurn) {
       if (player.HP <= 0) {
         player.HP = 0;
@@ -233,16 +232,16 @@ void playerPic() {
 
 void getTextOne() {
   textSize(28);
-  text("HP: " + player.HP, 5, 390);
+  text("HP: " + player.HP, 5, 490);
 }
 
 void getTextTwo() {
   textSize(22);
-  text("HP: " + player.HP, 5, 310);
-  text("Energy: " + player.Mana, 5, 330);
-  text("1) Attack: 0", 5, 350);
-  text("2) Presentation: 5", 5, 370);
-  text("3) All-Nighter: 30", 5, 390);
+  text("HP: " + player.HP, 5, 400);
+  text("Time: " + player.Mana, 5, 420);
+  text("1) Attack: 0", 5, 440);
+  text("2) Presentation: 5", 5, 460);
+  text("3) Power-Nap: 30", 5, 480);
 }
 
 void pause() {

@@ -16,6 +16,6 @@ class Freshman extends Enemy {
     atk = (int) ((Atk/PD + 1) * ((Math.random() * 10) +30));;
     p.HP = p.HP - atk;
     p.YourTurn = true;
-    return "The nerd did " + atk  + " damage!";
+    return "The Freshman did " + atk  + " damage!";
   }
 }
