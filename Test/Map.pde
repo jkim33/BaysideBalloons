@@ -2,7 +2,7 @@ class Map {
   Tile[][] tiles;
 
   Map(int map) {
-    tiles = new Tile[11][13];
+    tiles = new Tile[9][11];
     if (map == 0) {
       mapZero();
     }
@@ -12,8 +12,8 @@ class Map {
   }
 
   void display() {
-    for (int row = 1; row < 10; row++) {
-      for (int col = 1; col < 12; col++) {
+    for (int row = 1; row < 8; row++) {
+      for (int col = 1; col < 10; col++) {
         image(tiles[row][col].getPhoto(), (col-1)*50, (row-1)*50);
       }
     }

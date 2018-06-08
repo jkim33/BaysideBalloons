@@ -7,7 +7,7 @@ class Freshman extends Enemy {
     MAtk = 20.;
     MDef = 20.;
     Mana = 10.;
-    Speed = 40.;
+    Speed = 50.;
   }
   
   String attack(Player p) {

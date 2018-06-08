@@ -5,11 +5,12 @@ Enemy[] concentration;
 Enemy enemy;
 int mapNum;
 int aniState;
-String battlePlayerString;
-String battleEnemyString;
+String battleString;
+int battleCounter;
+int endCounter;
 
 void setup() {
-  size(550, 500);
+  size(450, 400);
   mapNum = 0;
   map = new Map(mapNum);
   player = new Player();
@@ -17,45 +18,81 @@ void setup() {
   concentration = hallway;
   enemy = concentration[0];
   aniState = 0;
-  battleEnemyString = "";
-  battlePlayerString = "";
+  battleString = "";
+  battleCounter = 0;
+  endCounter = 0;
 }
 
 void draw() {
   if (player.Lost) {
     background(255, 0, 0);
+  } else if (player.End) {
+    if (player.HP > 0) {
+      if (endCounter < 120) {
+        background(0, 0, 0);
+        PImage photo = loadImage("battle.png");
+        image(photo, 0, 0);
+        PImage p = loadImage("player4.png");
+        image(p, 100, 150);
+        image(enemy.getPhoto(), 300, 150);
+        getTextTwo();
+        text("You Defeated the Enemy!", 250, 310, 200, 175);
+        endCounter++;
+      } else {
+        player.End = false;
+      }
+    } else {
+      if (endCounter < 120) {
+        background(0, 0, 0);
+        PImage photo = loadImage("battle.png");
+        image(photo, 0, 0);
+        PImage p = loadImage("player4.png");
+        image(p, 100, 150);
+        image(enemy.getPhoto(), 300, 150);
+        getTextTwo();
+        text("You have been Defeated!", 250, 310, 200, 175);
+        endCounter++;
+      } else {
+        player.End = false;
+        player.Lost = true;
+      }
+    }
   } else if (!player.Fighting) {
+    battleString = "";
+    battleCounter = 0;
+    endCounter = 0;
     background(0, 0, 0);
     check();
     map.display();
     playerPic();
     getTextOne();
   } else {
-    println(player.YourTurn);
     background(0, 0, 0);
     PImage photo = loadImage("battle.png");
     image(photo, 0, 0);
     PImage p = loadImage("player4.png");
     image(p, 100, 150);
     image(enemy.getPhoto(), 300, 150);
+    if (player.HP <= 0) {
+      player.HP = 0;
+    }
     getTextTwo();
-    if (player.YourTurn) {
-      textSize(28);
-      text(battlePlayerString, 150, 310, 100, 100);
-      delay(2000);
-      battlePlayerString = "";
-      if (enemy.HP <= 0) {
-        player.Fighting = false;
-        enemy.HP = 100;
-      }
-    } else {
-      String battleEnemyString = enemy.attack(player);
-      textSize(28);
-      text(battleEnemyString, 150, 310, 100, 100);
-      delay(2000);
+    if (battleCounter < 120 && battleString != "") {
+      battleCounter++;
+      text(battleString, 250, 310, 200, 175);
+    } else if (player.YourTurn) {
       if (player.HP <= 0) {
-        player.Lost = true;
+        player.HP = 0;
+        player.End = true;
       }
+      battleString = "";
+    } else {
+      if (player.HP <= 0) {
+        player.HP = 0;
+        player.End = true;
+      }
+      battleString = enemy.attack(player);
+      battleCounter = 0;
     }
   }
 }
@@ -96,7 +133,8 @@ void keyPressed() {
   } else {
     if (player.YourTurn) {
       if (key == '1') {
-        battlePlayerString = player.attack(key, enemy);
+        battleString = player.attack(key, enemy);
+        battleCounter = 0;
       }
     }
   }
@@ -185,7 +223,7 @@ void getTextTwo() {
   text("HP: " + player.HP, 5, 310);
   text("Energy: " + player.Mana, 5, 330);
   text("1) Attack: 0", 5, 350);
-  text("2) Present: 10", 5, 370);
+  text("2) Presentation: 5", 5, 370);
   text("3) All-Nighter: 30", 5, 390);
 }
 
