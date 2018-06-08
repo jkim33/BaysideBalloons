@@ -37,7 +37,7 @@
 ## Launch Instructions
   1) Open the Terminal. Clone this repository. 
     - HTTPS: git clone https://github.com/jkim33/BaysideBalloons.git
-    - SSH: git@github.com: git clone jkim33/BaysideBalloons.git
+    - SSH: git clone git@github.com:jkim33/BaysideBalloons.git
   2) Change your directory until you are in the RPG directory.
     - Use cd in the terminal. 
     - cd someDirectory/BaysideBalloons/RPG/
