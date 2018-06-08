@@ -15,7 +15,7 @@ int battleCounter;
 int endCounter;
 
 void setup() {
-  size(450, 400);
+  size(550, 500);
   mapNum = 0;
   map = new Map(mapNum);
   player = new Player();
@@ -233,7 +233,7 @@ void playerPic() {
 
 void getTextOne() {
   textSize(28);
-  text("HP: " + player.HP, 5, 390);
+  text("HP: " + player.HP, 5, 490);
 }
 
 void getTextTwo() {

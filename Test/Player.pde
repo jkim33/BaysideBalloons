@@ -27,8 +27,8 @@ class Player {
     MDef = 30.;
     Mana = 10.;
     Speed = 45.;
-    x = 205;
-    y = 150;
+    x = 255;
+    y = 200;
   }
 
   int attack() {
