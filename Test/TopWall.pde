@@ -1,5 +1,6 @@
-class TopWall extends WallTile {
+class TopWall extends Tile {
   TopWall() {
-    photo = loadImage("wall.png");
+    type = 1;
+    photo = loadImage("topwall.png");
   }
 }

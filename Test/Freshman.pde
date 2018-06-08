@@ -1,14 +1,6 @@
-class Enemy {
-  PImage photo;
-  int HP;
-  float Atk;
-  float Def;
-  float MAtk;
-  float MDef;
-  float Mana;
-  float Speed;
-
-  Enemy() {
+class Freshman extends Enemy {
+  Freshman() {
+    photo = loadImage("freshman.png");
     HP = 100;
     Atk = 20.;
     Def = 25.;
@@ -24,10 +16,6 @@ class Enemy {
     atk = (int) ((Atk/PD + 1) * ((Math.random() * 10) +30));;
     p.HP = p.HP - atk;
     p.YourTurn = true;
-    return "The enemy did" + atk  + " damage!";
-  }
-  
-  PImage getPhoto() {
-    return photo;
+    return "The nerd did " + atk  + " damage!";
   }
 }

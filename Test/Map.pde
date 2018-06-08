@@ -2,7 +2,7 @@ class Map {
   Tile[][] tiles;
 
   Map(int map) {
-    tiles = new Tile[5][5];
+    tiles = new Tile[11][13];
     if (map == 0) {
       mapZero();
     }
@@ -12,49 +12,83 @@ class Map {
   }
 
   void display() {
-    for (int y = 0; y < 5; y++) {
-      for (int x = 0; x < 5; x++) {
-        image(tiles[x][y].getPhoto(), y*50, x*50);
+    for (int row = 1; row < 10; row++) {
+      for (int col = 1; col < 12; col++) {
+        image(tiles[row][col].getPhoto(), (col-1)*50, (row-1)*50);
       }
     }
   }
-  
+
   void mapZero() {
-    for (int i = 0; i < 5; i++) {
-      for (int k = 0; k < 5; k++) {
-        if (i == 0 || i == 4) {
-          tiles[i][k] = new TopWall();
+    for (int c = 0; c < 11; c++) {
+      tiles[0][c] = new WallTile();
+      tiles[8][c] = new WallTile();
+    }
+    for (int r = 0; r < 9; r++) {
+      tiles[r][0] = new WallTile();
+      tiles[r][10] = new WallTile();
+    }
+    for (int row1 = 1; row1 < 8; row1++) {
+      if (row1 < 7) {
+        tiles[row1][1] = new WallTile();
+      }
+      else {
+        tiles[row1][1] = new TopWall();
+      }
+    }
+    for (int row2 = 1; row2 < 8; row2++) {
+      for (int col2 = 2; col2 < 9; col2++) {
+        if (row2 == 1) {
+          tiles[row2][col2] = new TopWall();
         }
-        else if (k==0 || k== 4) {
-          tiles[i][k] = new WallTile();
+        else if (row2 == 7) {
+          tiles[row2][col2] = new TopWall();
         }
         else {
-          tiles[i][k] = new PassTile();
-        }
-        if (i == 2 && k == 4) {
-          tiles[i][k] = new PortalTile(1, 55, 125);
+          tiles[row2][col2] = new FloorTile();
         }
       }
     }
-  }
- 
-  void mapOne() {
-    for (int i = 0; i < 5; i++) {
-      for (int k = 0; k < 5; k++) {
-        if (i == 0 || i == 4) {
-          tiles[i][k] = new WallTile();
-        }
-        else if (k==0 || k== 4) {
-          tiles[i][k] = new WallTile();
-        }
-        else {
-          tiles[i][k] = new PassTile();
-        }
-        if (i == 2 && k == 0) {
-          tiles[i][k] = new PortalTile(0, 195, 125);
-        }
-      }
-    }
+    tiles[1][9] = new WallTile();
+    tiles[2][9] = new WallTile();
+    tiles[3][9] = new TopWall();
+    tiles[4][9] = new PortalTile(1, 55, 150);
+    tiles[5][9] = new WallTile();
+    tiles[6][9] = new WallTile();
+    tiles[7][9] = new TopWall();
   }
   
+  void mapOne() {
+    for (int row1 = 1; row1 < 8; row1++) {
+      if (row1 < 7) {
+        tiles[row1][9] = new WallTile();
+      }
+      else {
+        tiles[row1][9] = new TopWall();
+      }
+    }
+    for (int row2 = 1; row2 < 8; row2++) {
+      for (int col2 = 2; col2 < 9; col2++) {
+        if (row2 == 1) {
+          tiles[row2][col2] = new TopWall();
+        }
+        else if (row2 == 7) {
+          tiles[row2][col2] = new TopWall();
+        }
+        else {
+          tiles[row2][col2] = new FloorTile();
+        }
+      }
+    }
+    tiles[1][1] = new WallTile();
+    tiles[2][1] = new WallTile();
+    tiles[3][1] = new TopWall();
+    tiles[4][1] = new PortalTile(0, 380, 150);
+    tiles[5][1] = new WallTile();
+    tiles[6][1] = new WallTile();
+    tiles[7][1] = new TopWall();
+  }
+  
+ 
+
 }
