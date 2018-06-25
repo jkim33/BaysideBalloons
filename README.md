@@ -41,6 +41,6 @@
   2) Change your directory until you are in the RPG directory.
     - Use cd in the terminal. 
     - cd someDirectory/BaysideBalloons/RPG/
-  3) Open Test.pde with processing.
+  3) Open RPG.pde with processing.
     - In terminal, type: processing RPG.pde
   4) In processing, hit the play button!
